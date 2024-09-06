@@ -9,6 +9,7 @@ nav:
 theme:
   name: material
   language: en
+
   features:
     - navigation.footer
     - navigation.instant
@@ -63,6 +64,10 @@ extra:
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
+  # - git-committers:
+  #     repository: ginocic/PiHomeLab
+  #     branch: main
+  - git-authors
 #   - search
 #   - tags
 #   - glightbox:
