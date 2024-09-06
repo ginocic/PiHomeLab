@@ -1,15 +1,21 @@
+# Project information
 site_name: My RPi HomeLab
+site_author: Gino Cicatiello
+site_description: >-
+  How to build up a "domestic" homelab with raspberry pi's
+
+# Repository
+repo_name: ginocic/PiHomeLab
 repo_url: https://github.com/ginocic/PiHomeLab
 
-nav:
-  - Home: index.md
-  - 'Operating System':
-    - Installation: os/installation.md
+# Copyright
+copyright: |
+  &copy; 2024 <a href="https://github.com/ginocic"  target="_blank" rel="noopener">Gino Cicatiello</a>
 
+# Configuration
 theme:
   name: material
   language: en
-
   features:
     - navigation.footer
     - navigation.instant
@@ -18,28 +24,30 @@ theme:
   #   - search.suggest
   #   - search.highlight
   #   - content.tabs.link
-  #   - content.code.annotate
-  #   - content.code.copy
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
 
-# markdown_extensions:
-#   - def_list
-#   - pymdownx.highlight:
-#       anchor_linenums: true
-#   - pymdownx.inlinehilite
-#   - pymdownx.snippets
-#   - admonition
-#   - pymdownx.arithmatex:
-#       generic: true
-#   - footnotes
-#   - pymdownx.details
-#   - pymdownx.superfences
-#   - pymdownx.mark
-#   - pymdownx.keys
-#   - attr_list
-#   - pymdownx.emoji:
-#       emoji_index: !!python/name:material.extensions.emoji.twemoji
-#       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
+# Plugins
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+  # - git-committers:
+  #     repository: ginocic/PiHomeLab
+  #     branch: main
+  - git-authors
+#   - search
+#   - tags
+#   - glightbox:
+#       zoomable: true
+#       draggable: true
+#       skip_classes:
+#         - skip-lightbox
+
+# Hooks
+#hooks:
+
+# Additional configuration
 extra:
   social:
     - icon: fontawesome/brands/github-alt
@@ -60,20 +68,32 @@ extra:
 #     JavaScript: js
 #     CSS: css
 
-plugins:
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - git-committers:
-      repository: ginocic/PiHomeLab
-      branch: main
-  - git-authors
-#   - search
-#   - tags
-#   - glightbox:
-#       zoomable: true
-#       draggable: true
-#       skip_classes:
-#         - skip-lightbox
+# Extensions
+markdown_extensions:
+#   - def_list
+  - admonition
+#   - pymdownx.arithmatex:
+#       generic: true
+#   - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+#   - attr_list
+#   - pymdownx.emoji:
+#       emoji_index: !!python/name:material.extensions.emoji.twemoji
+#       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-copyright: |
-  &copy; 2024 <a href="https://github.com/ginocic"  target="_blank" rel="noopener">Gino Cicatiello</a>
+# Page tree
+nav:
+  - Home: index.md
+  - 'Operating System':
+    - Installation: os/installation.md
