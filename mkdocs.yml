@@ -14,7 +14,6 @@ theme:
     - navigation.footer
     - navigation.instant
     - navigation.top
-    # - toc.integrate
     - toc.follow
   #   - search.suggest
   #   - search.highlight
@@ -64,9 +63,9 @@ extra:
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
-  # - git-committers:
-  #     repository: ginocic/PiHomeLab
-  #     branch: main
+  - git-committers:
+      repository: ginocic/PiHomeLab
+      branch: main
   - git-authors
 #   - search
 #   - tags
