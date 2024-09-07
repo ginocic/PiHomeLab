@@ -20,7 +20,7 @@ Insert it into the Raspberry and turn it on.
 
 The installation will start and, after a few minutes, it will finish waiting for the first user login.
 
-## First Configurations
+## First Login
 
 Log in and give the first command
 
@@ -28,7 +28,7 @@ Log in and give the first command
 ip a show eth0
 ```
 
-to write down the IP address of the Raspberry
+Write down the IP address of the Raspberry.
 
 !!! info
-    Disconnect keyboard and monitor. Form now on, we will connect to the machine via SSH
+    Disconnect keyboard and monitor. Form now on, we will connect to the machine over SSH

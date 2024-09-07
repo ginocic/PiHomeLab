@@ -1,5 +1,7 @@
 # First configurations
 
+Connect over SSH to set up the first configurations.
+
 ## Disable WiFi and/or Bluetooth
 
 ```sh
@@ -37,7 +39,10 @@ select the following options
 - `BACK`
 - `Quit`
 
-The first configurations are ended. Execute the next command to reboot the Raspberry
+!!! warning
+    Changing the IP address could break the connection. If so, connect again with the right address.
+
+Just to be sure that all the modification will be preserved, execute the next command to reboot the Raspberry
 
 ```sh
 sudo reboot
