@@ -102,3 +102,5 @@ nav:
     - Installation: os/installation.md
     - Connection over SSH: os/ssh.md
     - First Configurations: os/configuration.md
+    - Customization: os/customization.md
+    
