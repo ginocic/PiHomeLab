@@ -32,11 +32,10 @@ theme:
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
-  # - git-committers:
-  #     repository: ginocic/PiHomeLab
-  #     branch: main
-  - git-authors
-#   - search
+      timezone: Europe/Amsterdam
+      locale: en
+      type: iso_date
+  - search
 #   - tags
 #   - glightbox:
 #       zoomable: true

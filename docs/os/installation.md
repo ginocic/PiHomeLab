@@ -14,12 +14,13 @@
 Write the operating system to the MicroSD using Imager. When it's done, take out the MicroSD.
 
 !!! tip "Some useful steps before proceeding"
-
     Connect a keyboard and monitor to the Raspberry to follow the initial installation phase and check that no errors occur.
 
 Insert it into the Raspberry and turn it on.
 
 The installation will start and, after a few minutes, it will finish waiting for the first user login.
+
+## First Configurations
 
 Log in and give the first command
 
@@ -27,7 +28,9 @@ Log in and give the first command
 ip a show eth0
 ```
 
-write down the IP address of the Raspberry
+to write down the IP address of the Raspberry
+
+To disable WiFi and/or Bluetooth
 
 ```sh
 sudo nano /boot/firmware/config.txt
@@ -42,21 +45,35 @@ dtoverlay=disable-bt
 
 save the file with ++ctrl+x+y++ and execute the next command
 
+To change to static IP address and disable IPv6:
+
 ```sh
-sudo nano /boot/firmware/cmdline.txt
+sudo nmtui
 ```
 
-add the following to the end of the file
+select the following options
 
-```text
- ipv6.disable=1
-```
+- `Edit a connection`
+- `Wired connection 1`
+- `IPv4 CONFIGURATION`
+    - set to `Manual`
+    - `Addresses` &rArr; `Add` &rArr; *static IP of the host*
+    - `Gateway` &rArr; `Add` &rArr; *IP of the gateway*
+    - `DNS server` &rArr; `Add` &rArr; *IP of the DNS*
+    - `Search domains` &rArr; `Add` &rArr; *network domains*
+- `IPv6 CONFIGURATION`
+    - set to `Disabled`
+- `OK`
+- `BACK`
+- `Quit`
 
-!!! note
-    do not forget the space before the text
-
-again, save the file with ++ctrl+x+y++ and execute the next command to reboot the Raspberry
+The first configurations are ended. Execute the next command to reboot the Raspberry
 
 ```sh
 sudo reboot
 ```
+
+Log in again just to check that there are no errors.
+
+!!! info
+    Disconnect keyboard and monitor. Form now on, we will connect to the machine via SSH
