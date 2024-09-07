@@ -30,12 +30,16 @@ theme:
 
 # Plugins
 plugins:
+  - search
   - git-revision-date-localized:
       enable_creation_date: true
       timezone: Europe/Amsterdam
       locale: en
       type: iso_date
-  - search
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+      show_email_address: false
 #   - tags
 #   - glightbox:
 #       zoomable: true
@@ -96,3 +100,5 @@ nav:
   - Home: index.md
   - 'Operating System':
     - Installation: os/installation.md
+    - Connection over SSH: os/ssh.md
+    - First Configurations: os/configuration.md
