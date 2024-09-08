@@ -75,11 +75,16 @@ extra:
 markdown_extensions:
 #   - def_list
   - admonition
+  - tables
 #   - pymdownx.arithmatex:
 #       generic: true
 #   - footnotes
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.keys
   - pymdownx.caret
   - pymdownx.mark
@@ -107,5 +112,6 @@ nav:
     - Connection over SSH: os/ssh.md
     - First Configurations: os/configuration.md
     - Move the Raspberry PI root file system to a USB drive: os/rootfs.md
+    - Enabling the TRIM function: os/fstrim.md
     - Customization: os/customization.md
     
