@@ -1,7 +1,11 @@
 # Move the Raspberry PI root file system to a USB drive
 
 !!! warning
-    This step is intended **ONLY** for the Raspberry OS.
+    This procedure is to be performed **ONLY** on Raspberry. On other platforms they are:
+
+    * not necessary
+    * perhaps useless
+    * potentially **DANGEROUS**
 
 ## Insert the USB drive and SD card into the PC
 

@@ -1,6 +1,6 @@
-# Welcome to My RPi HomeLab
+# Welcome to My HomeLab
 
-How to build up an home-lab with Raspberry Pi
+How to build up an homelab on Linux with Raspberry Pi, Odroid, Zimaboard and MiniPC
 
 ## OS
 
@@ -8,29 +8,44 @@ Procedure to be performed on almost all machines
 
 * OS installation
 * First basic configurations
-* FSTRIM
-* Move ROOTFS on USB Disk
+* Customizations
 * more...
-
-## Software and Applications
 
 Procedure to be performed only on some machines
 
-### Docker and Docker Compose
+=== "Raspberry"
 
-* Dozzle
-* Watchtower
-* Komga
-* Komf
-* ShokoServer
-* Transmission-OpenVPN
-* Transmission-RSS
-* Gitea
-* MariaDB
-* more...
+    * Move ROOTFS on USB Disk
+    * Enabling TRIM Function
 
-### PiHole and Unbound
+=== "Odroid"
 
-### Pi.Alert
+    [TDL]
 
-### OpenMediaVault
+=== "Zimaboard/Zimablade"
+
+    [TDL]
+
+=== "MiniPC"
+
+    [TDL]
+
+## Software and Applications
+
+Software and application to be installed:
+
+1. Docker, Docker Compose and Docker images
+    * Dozzle
+    * Watchtower
+    * Komga
+    * Komf
+    * ShokoServer
+    * Transmission-OpenVPN
+    * Transmission-RSS
+    * Gitea
+    * MariaDB
+    * more...
+2. PiHole and Unbound
+3. Pi.Alert
+4. OpenMediaVault
+5. more...

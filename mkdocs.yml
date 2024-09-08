@@ -1,8 +1,8 @@
 # Project information
-site_name: My RPi HomeLab
+site_name: My HomeLab
 site_author: Gino Cicatiello
 site_description: >-
-  How to build up a "domestic" homelab with raspberry pi's
+  How to build up a "domestic" homelab
 
 # Repository
 repo_name: ginocic/PiHomeLab
@@ -16,21 +16,24 @@ copyright: |
 theme:
   name: material
   language: en
+  palette:
+    scheme: slate
+    primary: deep orange
+    accent: amber
   features:
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
     - navigation.footer
     - navigation.instant
     - navigation.top
     - toc.follow
   #   - search.suggest
   #   - search.highlight
-  #   - content.tabs.link
-    - content.code.annotate
-    - content.code.copy
-    - content.code.select
 
 # Plugins
 plugins:
-  - search
   - git-revision-date-localized:
       enable_creation_date: true
       timezone: Europe/Amsterdam
@@ -40,6 +43,7 @@ plugins:
       show_contribution: true
       show_line_count: true
       show_email_address: false
+  - search
 #   - tags
 #   - glightbox:
 #       zoomable: true
@@ -73,32 +77,35 @@ extra:
 
 # Extensions
 markdown_extensions:
-#   - def_list
   - admonition
-  - tables
-#   - pymdownx.arithmatex:
-#       generic: true
-#   - footnotes
-  - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.keys
   - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.keys
   - pymdownx.mark
-  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tilde
+  - tables
+#   - def_list
+#   - pymdownx.arithmatex:
+#       generic: true
+#   - footnotes
 #   - attr_list
 #   - pymdownx.emoji:
 #       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -107,11 +114,14 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - 'Operating System':
+  - Operating System:
     - Installation: os/installation.md
     - Connection over SSH: os/ssh.md
+    - Mandatory steps:
+      - Raspberry Pi:
+        - Move the Raspberry PI root file system to a USB drive: mandatory/rpi/rootfs.md
+        - Enabling the TRIM function: mandatory/rpi/fstrim.md
+      - MiniPC:
+        - The first things to do: mandatory/minipc/first.md
     - First Configurations: os/configuration.md
-    - Move the Raspberry PI root file system to a USB drive: os/rootfs.md
-    - Enabling the TRIM function: os/fstrim.md
     - Customization: os/customization.md
-    

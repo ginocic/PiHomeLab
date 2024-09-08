@@ -1,5 +1,12 @@
 # Enabling the TRIM function
 
+!!! warning
+    This procedure is to be performed **ONLY** on Raspberry. On other platforms they are:
+
+    * not necessary
+    * perhaps useless
+    * potentially **DANGEROUS**
+
 ## Find the controller's USB address
 
 !!! note

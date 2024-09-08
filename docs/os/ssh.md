@@ -1,4 +1,4 @@
-# Connection to the Raspberry Pi over SSH
+# Connection to the host over SSH
 
 Form now on, we will connect to the machine over SSH.
 

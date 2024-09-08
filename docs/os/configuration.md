@@ -4,47 +4,81 @@ Connect over SSH to set up the first configurations.
 
 ## Disable WiFi and/or Bluetooth
 
-```sh
-sudo nano /boot/firmware/config.txt
-```
+=== "Raspberry"
 
-add the following to the end of the file
+    ``` sh
+    sudo nano /boot/firmware/config.txt
+    ```
 
-```text
-dtoverlay=disable-wifi
-dtoverlay=disable-bt
-```
+    add the following to the end of the file
 
-save the file with ++ctrl+x+y++ and execute the next command
+    ``` text
+    dtoverlay=disable-wifi
+    dtoverlay=disable-bt
+    ```
+
+    save the file with ++ctrl+x+y++ and execute the next command
+
+=== "Odroid"
+
+    [TDL]
+
+=== "Zimaboard/Zimablade"
+
+    [TDL]
+
+=== "MiniPC"
+
+    [TDL]
 
 ## Change to static IP address and disable IPv6
 
-```sh
-sudo nmtui
-```
+=== "Raspberry"
 
-select the following options
+    Run the command
 
-- `Edit a connection`
-- `Wired connection 1`
-- `IPv4 CONFIGURATION`
-    - set to `Manual`
-    - `Addresses` &rArr; `Add` &rArr; *static IP of the host*
-    - `Gateway` &rArr; `Add` &rArr; *IP of the gateway*
-    - `DNS server` &rArr; `Add` &rArr; *IP of the DNS*
-    - `Search domains` &rArr; `Add` &rArr; *network domains*
-- `IPv6 CONFIGURATION`
-    - set to `Disabled`
-- `OK`
-- `BACK`
-- `Quit`
+    ``` sh
+    sudo nmtui
+    ```
+
+    select the following options
+
+    - `Edit a connection`
+    - `Wired connection 1`
+    - `IPv4 CONFIGURATION`
+        - set to `Manual`
+        - `Addresses` &rArr; `Add` &rArr; *static IP of the host*
+        - `Gateway` &rArr; `Add` &rArr; *IP of the gateway*
+        - `DNS server` &rArr; `Add` &rArr; *IP of the DNS*
+        - `Search domains` &rArr; `Add` &rArr; *network domains*
+    - `IPv6 CONFIGURATION`
+        - set to `Disabled`
+    - `OK`
+    - `BACK`
+    - `Quit`
+
+=== "Odroid"
+
+    [TDL]
+
+=== "Zimaboard/Zimablade"
+
+    [TDL]
+
+=== "MiniPC"
+
+    ``` sh
+    sudo nano /etc/network/interfaces
+    ````
 
 !!! warning
     Changing the IP address could break the connection. If so, connect again with the right address.
 
-Just to be sure that all the modification will be preserved, execute the next command to reboot the Raspberry
+## Reboot the host
 
-```sh
+Just to be sure that all the modification will be preserved, execute the next command to reboot the host
+
+``` sh
 sudo reboot
 ```
 
