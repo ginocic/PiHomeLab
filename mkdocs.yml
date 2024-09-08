@@ -90,6 +90,10 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
 #   - attr_list
 #   - pymdownx.emoji:
 #       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -102,5 +106,6 @@ nav:
     - Installation: os/installation.md
     - Connection over SSH: os/ssh.md
     - First Configurations: os/configuration.md
+    - Move the Raspberry PI root file system to a USB drive: os/rootfs.md
     - Customization: os/customization.md
     
