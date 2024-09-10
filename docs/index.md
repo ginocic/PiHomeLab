@@ -28,7 +28,7 @@ Procedure to be performed only on some machines
 
 === "MiniPC"
 
-    [TDL]
+    * Sudo and Sudoers
 
 ## Software and Applications
 

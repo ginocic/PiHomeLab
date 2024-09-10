@@ -122,8 +122,7 @@ nav:
         - Move the Raspberry PI root file system to a USB drive: mandatory/rpi/rootfs.md
         - Enabling the TRIM function: mandatory/rpi/fstrim.md
       - MiniPC:
-        - The first things to do: mandatory/minipc/first.md
-      - All:
-        - System: mandatory/all/system.md
+        - Sudo and Sudoers: mandatory/minipc/sudo.md
+      - All System: mandatory/all.md
     - First Configurations: os/configuration.md
     - Customization: os/customization.md
