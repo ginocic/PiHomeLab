@@ -123,5 +123,7 @@ nav:
         - Enabling the TRIM function: mandatory/rpi/fstrim.md
       - MiniPC:
         - The first things to do: mandatory/minipc/first.md
+      - All:
+        - System: mandatory/all/system.md
     - First Configurations: os/configuration.md
     - Customization: os/customization.md
