@@ -126,4 +126,5 @@ nav:
         - Sudo and Sudoers: mandatory/minipc/sudo.md
         - Networking: mandatory/minipc/networking.md
       - All System: mandatory/all.md
-    - Customization: os/customization.md
+  - Services:
+    - Pi-Hole: services/pihole.md

@@ -64,6 +64,7 @@ Mount the partitions by running the commands
 sudo mount /dev/sdb1 /mnt/sdboot
 sudo mount /dev/sdb2 /mnt/sdrootfs
 sudo mount /dev/sdc1 /mnt/usbdrive
+sudo systemctl daemon-reload
 ```
 
 To verify that all worked as intended, run
@@ -98,7 +99,7 @@ sudo blkid | grep "/dev/sdc1"
 The parameters that the bootloader passes to the kernel are located in file `cmdline.txt` on SD card’s boot partition. One of the parameters is the `PARTUUID` of the partition holding the root file system. Make a backup copy of this file first and then edit this file
 
 ``` sh
-sudo cp /mnt/sdboot/cmdline.txt /mnt/sdboot/cmdline.org
+sudo cp /mnt/sdboot/cmdline.txt /mnt/sdboot/cmdline.txt.bck
 sudo nano /mnt/sdboot/cmdline.txt
 ```
 
@@ -107,7 +108,7 @@ sudo nano /mnt/sdboot/cmdline.txt
 The fstab file is normally located in `/etc/fstab`. Make a backup copy of this file first then edit this file
 
 ``` sh
-sudo cp /mnt/usbdrive/etc/fstab /mnt/usbdrive/etc/fstab.org
+sudo cp /mnt/usbdrive/etc/fstab /mnt/usbdrive/etc/fstab.txt.bck
 sudo nano /mnt/usbdrive/etc/fstab
 ```
 
@@ -148,31 +149,11 @@ NAME             MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 └─/dev/mmcblk0p2 179:2    0   1.5G  0 part
 ```
 
-## Removing the unused partition
+## Removing the unused partition and resizing the boot partition
 
-Power the Raspberry down. Remove the card and insert it into a PC.
+Power the Raspberry down. Remove the SDcard and insert it into a PC.
 
-Select the device
-
-``` sh
-sudo fdisk /dev/sdb
-```
-
-type the next key sequence:
-
-- ++d++ to delete the partition
-- ++2++ the index of the partition to be deleted
-- ++p++ to print the disk layout
-- ++w++ to finally write the modifications
-
-## Resize the partition
-
-!!! example "to be checked"
-    ``` sh
-    resize2fs /dev/sdb1
-    ```
-
-## Reboot again the Raspberry PI
+Use `MiniTool Partition Wizard` to remove the old `rootfs` and resize the `bootfs` using all the unallocated space on the disk.
 
 Remove the SD card from the PC. Next, insert it into the Raspberry PI. Power on the Raspberry PI and wait a little bit for the boot process to complete.
 
