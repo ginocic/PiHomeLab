@@ -128,3 +128,4 @@ nav:
       - All System: mandatory/all.md
   - Services:
     - Pi-Hole: services/pihole.md
+    - Unbound: services/unbound.md

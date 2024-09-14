@@ -24,7 +24,8 @@ apt install -y rsync git curl wget tmux parted
 ## Bash Aliases
 
 ``` sh
-wget -N -P /etc/profile.d https://raw.githubusercontent.com/ginocic/PiHomeLab/main/scripts/commands_aliases.sh
+wget -N -P /etc/profile.d https://raw.githubusercontent.com/ginocic/PiHomeLab/main/scripts/01.commands_aliases.sh
+wget -N -P /etc/profile.d https://raw.githubusercontent.com/ginocic/PiHomeLab/main/scripts/02.pihole.sh
 ```
 
 Test your work. Do NOT log-out of existing terminal session. Instead, open a new terminal session (Duplicate session).
