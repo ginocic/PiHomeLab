@@ -82,7 +82,7 @@ alias ports='netstat -tulanp'
 alias portsused='sudo netstat -tulpn | grep LISTEN'
 alias ping='ping -c 4'
 
-echo "           Rete : ping       | ports        | portsused"
+echo "           Rete : ping       | ports      | portsused"
 echo ""
 
 # FSTRIM
@@ -90,5 +90,5 @@ alias trimma='sudo fstrim -a -v'
 alias trimtimer='sudo systemctl status fstrim.timer'
 alias trimservice='sudo systemctl status fstrim.service'
 
-echo "         FSTRIM : trimma   | trimtimer  | trimservice"
+echo "         FSTRIM : trimma     | trimtimer  | trimservice"
 echo ""
