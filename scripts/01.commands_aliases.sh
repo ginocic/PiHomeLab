@@ -16,9 +16,9 @@ alias upd='sudo apt update'
 alias upg='sudo apt full-upgrade -y'
 alias ripulisci='sudo apt autoremove -y'
 alias aggiorna='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
-echo "  Aggiornamenti : install   | uninstall | search"
-echo "                  upd       | upg       | ripulisci"
-echo "                                         aggiorna"
+echo "  Aggiornamenti : install    | uninstall  | search"
+echo "                  upd        | upg        | ripulisci"
+echo "                                            aggiorna"
 echo ""
 
 # System
@@ -38,8 +38,8 @@ alias path='echo -e ${PATH//:/\\n}'
 alias riavvia='sudo reboot'
 alias spegni='sudo shutdown -h now'
 
-echo "        Sistema : rsmv      | mkcd      | mount"
-echo "                               riavvia  | spegni"
+echo "        Sistema : rsmv       | mkcd       | mount"
+echo "                                riavvia   | spegni"
 echo ""
 
 # NAVIGATION
@@ -47,7 +47,7 @@ alias ..='cd ..'
 alias .2='cd ../..'
 alias .3='cd ../../..'
 
-echo "    Navigazione : ..        | .2        | .3"
+echo "    Navigazione : ..         | .2         | .3"
 echo ""
 
 # FILE SIZE AND STORAGE
@@ -58,8 +58,8 @@ alias mnt='mount | column -t'
 alias mntdev='mount | grep -E ^/dev | column -t'
 alias partusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpf'
 
-echo "        Dischi  : ls        | mnt       | mntdev"
-echo "                  lsdisk    | partuuid  | partusage"
+echo "        Dischi  : ls         | mnt        | mntdev"
+echo "                  lsdisk     | partuuid   | partusage"
 echo ""
 
 # SYSTEMD START, STOP AND RESTART
@@ -82,5 +82,13 @@ alias ports='netstat -tulanp'
 alias portsused='sudo netstat -tulpn | grep LISTEN'
 alias ping='ping -c 4'
 
-echo "           Rete : ping     | ports     | portsused"
+echo "           Rete : ping       | ports        | portsused"
+echo ""
+
+# FSTRIM
+alias trimma='sudo fstrim -a -v'
+alias trimtimer='sudo systemctl status fstrim.timer'
+alias trimservice='sudo systemctl status fstrim.service'
+
+echo "         FSTRIM : trimma   | trimtimer  | trimservice"
 echo ""
