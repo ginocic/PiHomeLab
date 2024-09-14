@@ -9,18 +9,19 @@ echo "Alias disponibili"
 echo ""
 
 # Package Manager
+alias install='sudo apt install'
+alias uninstall='sudo apt remove'
+alias search='sudo apt-cache search'
 alias upd='sudo apt update'
 alias upg='sudo apt full-upgrade -y'
 alias ripulisci='sudo apt autoremove -y'
 alias aggiorna='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
-echo "  Aggiornamenti : upd      | upg       | ripulisci"
+echo "  Aggiornamenti : install   | uninstall | search"
+echo "                  upd       | upg       | ripulisci"
 echo "                                         aggiorna"
 echo ""
 
 # System
-alias l='ls -lAh'
-alias lsdisk='lsblk -p | grep "disk\|part"'
-
 rsmv () {
   if [[ $# -eq 0 ]] ; then
     echo "No input files"
@@ -33,21 +34,53 @@ mkcd () {
   mkdir -p -- "$1" && cd -P -- "$1"
 }
 
-alias mount='mount |column -t'
 alias path='echo -e ${PATH//:/\\n}'
-alias ports='netstat -tulanp'
+alias riavvia='sudo reboot'
+alias spegni='sudo shutdown -h now'
 
+echo "        Sistema : rsmv      | mkcd      | mount"
+echo "                               riavvia  | spegni"
+echo ""
 
+# NAVIGATION
 alias ..='cd ..'
 alias .2='cd ../..'
 alias .3='cd ../../..'
 
-alias riavvia='sudo reboot'
-alias spegni='sudo shutdown -h now'
+echo "    Navigazione : ..        | .2        | .3"
+echo ""
 
-echo "        Sistema : l        | lsdisk"
-echo "                  rsmv     | mkcd"
-echo "                  mount    | path      | ports"
-echo "                  ..       | .2        | .3"
-echo "                  riavvia  | spegni"
+# FILE SIZE AND STORAGE
+alias l='ls -lAh'
+alias lsdisk='lsblk -p | grep "disk\|part"'
+alias partuuid='sudo blkid -s PARTUUID'
+alias mnt='mount | column -t'
+alias mntdev='mount | grep -E ^/dev | column -t'
+alias partusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpf'
+
+echo "        Dischi  : ls        | mnt       | mntdev"
+echo "                  lsdisk    | partuuid  | partusage"
+echo ""
+
+# SYSTEMD START, STOP AND RESTART
+alias ctlreload='sudo systemctl daemon-reload'
+alias ctlstart='sudo systemctl start'
+alias ctlstop='sudo systemctl stop'
+alias ctlrestart='sudo systemctl restart'
+alias ctlstatus='sudo systemctl status'
+alias ctlenable='sudo systemctl enable'
+alias ctldisable='sudo systemctl disable'
+alias ctlactive='sudo systemctl is-active'
+
+echo "        Systemd : ctlstart   | ctlstop    | ctlstatus"
+echo "                  ctlrestart | ctlreload "
+echo "                  ctlenable  | ctldisable | ctlactive"
+echo ""
+
+# NETWORKING
+alias ports='netstat -tulanp'
+alias portsused='sudo netstat -tulpn | grep LISTEN'
+alias ping='ping -c 4'
+
+echo "           Rete : ping     | ports     | portsused"
 echo ""
