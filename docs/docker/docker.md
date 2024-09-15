@@ -52,6 +52,17 @@ sudo docker -v
 sudo docker compose version
 ```
 
+### Some customization
+
+``` sh
+sudo wget -N -P /etc/profile.d https://raw.githubusercontent.com/ginocic/PiHomeLab/main/scripts/02.docker.sh
+sudo wget -N -P /usr/bin https://raw.githubusercontent.com/ginocic/PiHomeLab/main/scripts/dcomp
+sudo chown 1000:1000 /usr/bin/dcomp
+sudo chmod +x /usr/bin/dcomp
+sudo mkdir -p /Docker/{files/data}
+sudo chown -R 1000:1000 /Docker
+```
+
 ## Upgrade Docker Engine
 
 To upgrade Docker Engine, repeat from the [Install the Docker packages] of the installation instructions

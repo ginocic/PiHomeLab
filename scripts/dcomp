@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Safety check
+case $# in
+  0)
+    echo "Ehi! I need to know what to do... Gimme some -arguments-"
+    exit 1
+    ;;
+  1)
+    echo "Mmm... I miss something."
+    echo "Try: dcomp [command] [ContainerName]"
+    exit 1
+    ;;
+  2)
+    filesdir="/Docker/files"
+    global="${filesdir}/.env"
+    contenv="${filesdir}/$2/$2.env"
+    contyml="${filesdir}/$2/$2.yml"
+    params=""
+
+    case "$1" in
+      up)
+        params="up -d"
+        ;;
+      build)
+        params="up -build -d"
+        ;;
+      rebuild)
+        params="build --no-cache --pull"
+        ;;
+      recreate)
+        params="up -d --force-recreate"
+        ;;
+      terminate)
+        params="rm --force --stop -v"
+        ;;
+      edity)
+        nano $contyml
+        exit 0
+        ;;
+      edite)
+        nano $contenv
+        exit 0
+        ;;
+      *)
+        params=$1
+        ;;
+    esac
+
+    sudo docker compose --env-file $global --env-file $contenv -f $contyml $params
+    ;;
+  *)
+    echo "Mmm... Too much informations..."
+    echo "Try: dcomp [command] [ContainerName]"
+    exit 1
+    ;;
+
+esac

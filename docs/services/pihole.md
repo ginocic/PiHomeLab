@@ -73,6 +73,12 @@ Updating is as simple as running the following command:
 pihole -up
 ```
 
+### Some customization
+
+``` sh
+sudo wget -N -P /etc/profile.d https://raw.githubusercontent.com/ginocic/PiHomeLab/main/scripts/03.pihole.sh
+```
+
 ## Pi-hole can be uninstalled using
 
 ``` sh
