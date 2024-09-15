@@ -128,7 +128,7 @@ dig dnssec.works @127.0.0.1 -p 5335
 
 ### Configure Pi-hole
 
-Finally, configure Pi-hole to use your recursive DNS server by specifying 127.0.0.1#5335 as the Custom DNS (IPv4)
+Finally, configure Pi-hole to use your recursive DNS server by specifying `127.0.0.1#5335` as the Custom DNS (IPv4)
 
 !!! warning
     don't forget to hit ++enter++ or click on `Save`

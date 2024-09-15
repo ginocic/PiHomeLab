@@ -129,3 +129,7 @@ nav:
   - Services:
     - Pi-Hole: services/pihole.md
     - Unbound: services/unbound.md
+  - Docker:
+    - Docker and Docker Compose: docker/docker.md
+    - Containers:
+      - Watchtower: docker/containers/watchtower.md

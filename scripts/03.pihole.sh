@@ -17,7 +17,6 @@ if [ -f /usr/local/bin/pihole ]; then
   alias phchrono="pihole -c"
   alias phg="pihole -g"
   
-  echo ""
   echo "        Pi-Hole : phstatus   | phchrono   | phresdns"
   echo "                  phup       | phg        | phrepair"
   echo "                  netdevs    | phuprohi"

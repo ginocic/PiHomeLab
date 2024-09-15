@@ -56,6 +56,8 @@ Create the mount points with the following three commands
 sudo mkdir -p /mnt/usbdrive
 sudo mkdir -p /mnt/sdboot
 sudo mkdir -p /mnt/sdrootfs
+
+sudo mkdir -p /mnt/{usbdrive,sdboot,sdrootfs}
 ```
 
 Mount the partitions by running the commands
