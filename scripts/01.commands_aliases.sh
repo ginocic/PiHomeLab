@@ -39,7 +39,7 @@ alias riavvia='sudo reboot'
 alias spegni='sudo shutdown -h now'
 
 echo "        Sistema : rsmv       | mkcd       | mount"
-echo "                                riavvia   | spegni"
+echo "                               riavvia    | spegni"
 echo ""
 
 # NAVIGATION
