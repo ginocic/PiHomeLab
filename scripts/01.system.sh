@@ -51,7 +51,7 @@ echo "    Navigazione : ..         | .2         | .3"
 echo ""
 
 # FILE SIZE AND STORAGE
-alias l='ls -lAh'
+alias l='ls -lAh --group-directories-first'
 alias lsdisk='lsblk -p | grep "disk\|part"'
 alias partuuid='sudo blkid -s PARTUUID'
 alias mnt='mount | column -t'

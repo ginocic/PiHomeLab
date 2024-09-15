@@ -26,6 +26,6 @@ if [ -f /usr/bin/docker ]; then
   alias dstop='sudo docker stop $(sudo docker ps -a -q)'
   alias dstopall='sudo docker stop $(sudo docker ps -aq)'
 
-  echo ""         Docker : dps     | dnet"
+  echo "         Docker : dps     | dnet"
   echo "                   "
 fi
